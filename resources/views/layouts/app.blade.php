@@ -33,8 +33,8 @@
                      <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
                         <a class="nav-link font-weight-bold" href="{{ url("/")}}">
                             <i class="fas fa-home"></i>
-                            Beranda
                         </a>
+                            Beranda
                     </li>
                     <li class="nav-item dropdown {{ Request::is('/profil') ? 'active' : '' }}">
                         <a class="nav-link dropdown-toggle font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
