@@ -13,6 +13,8 @@
     <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
     <script src="{{ mix('js/app.js') }}"></script>
 
+    @yield('head')
+
     <style>
         .dropdown:hover>.dropdown-menu {
            display: block;
@@ -34,31 +36,30 @@
                 <ul class="navbar-nav">
                      <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
                         <a class="nav-link font-weight-bold" href="{{ url("/")}}">
-                            <i class="fas fa-home"></i>
+                            <i class="fas fa-home mr-1"></i>
                             Beranda
                         </a>
                     </li>
-                    <li class="nav-item dropdown {{ Request::is('/profil') ? 'active' : '' }}">
+                    <li class="nav-item dropdown {{ Request::is('profil') ? 'active' : '' }}">
                         <a class="nav-link dropdown-toggle font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-info-circle"></i>
+                            <i class="fas fa-info-circle mr-1"></i>
                             Profil
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">
-                                Profil PPID
-                            </a>
-                            <a class="dropdown-item" href="#">Bagan Organisasi PPID</a>
-                            <a class="dropdown-item" href="#">SOP PPID</a>
-                            <a class="dropdown-item" href="#">Maklumat Informasi Publik</a>
-                            <a class="dropdown-item" href="#">Mekanisme Pelayanan Informasi Publik</a>
-                            <a class="dropdown-item" href="#">Standar Pelayanan Informasi Publik</a>
-                            <a class="dropdown-item" href="#">Galeri PPID</a>
-                            <a class="dropdown-item" href="#">Dasar Hukum</a>
+                            <a class="dropdown-item" href="{{ url("/profil")}}">Profil PPID</a>
+                            <a class="dropdown-item" href="{{ url("/profil/bagan-organisasi")}}">Bagan Organisasi PPID</a>
+                            <a class="dropdown-item" href="{{ url("/profil/visi-misi")}}">Visi dan Misi</a>
+                            <a class="dropdown-item" href="{{ url("/profil/sop")}}">SOP PPID</a>
+                            <a class="dropdown-item" href="{{ url("/profil/maklumat-informasi")}}">Maklumat Informasi Publik</a>
+                            <a class="dropdown-item" href="{{ url("/profil/mekanisme-pelayanan")}}">Mekanisme Pelayanan Informasi Publik</a>
+                            <a class="dropdown-item" href="{{ url("/profil/standar-pelayanan")}}">Standar Pelayanan Informasi Publik</a>
+                            <a class="dropdown-item" href="{{ url("/profil/galeri")}}">Galeri PPID</a>
+                            <a class="dropdown-item" href="{{ url("/profil/dasar-hukum")}}">Dasar Hukum</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown {{ Request::is('/daftar-informasi-publik') ? 'active' : '' }}">
                         <a class="nav-link dropdown-toggle font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-th-list"></i>
+                            <i class="fas fa-th-list mr-1"></i>
                             Daftar Informasi Publik
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -68,7 +69,7 @@
                     </li>
                     <li class="nav-item dropdown {{ Request::is('/informasi-publik') ? 'active' : '' }}">
                         <a class="nav-link dropdown-toggle font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-newspaper"></i>
+                            <i class="fas fa-newspaper mr-1"></i>
                             Informasi Publik
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -79,13 +80,13 @@
                     </li>
                     <li class="nav-item {{ Request::is('/ppid-pembantu') ? 'active' : '' }}">
                         <a class="nav-link font-weight-bold" href="{{ url("/ppid-pembantu")}}">
-                            <i class="fas fa-question-circle"></i>
+                            <i class="fas fa-question-circle mr-1"></i>
                             PPID Pembantu
                         </a>
                     </li>
                     <li class="nav-item dropdown {{ Request::is('/permohonan-informasi') ? 'active' : '' }}">
                         <a class="nav-link dropdown-toggle font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-info-circle"></i>
+                            <i class="fas fa-info-circle mr-1"></i>
                             Permohonan Informasi
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -98,7 +99,7 @@
                     </li>
                     <li class="nav-item {{ Request::is('/kontak') ? 'active' : '' }}">
                         <a class="nav-link font-weight-bold" href="{{ url("/kontak-kami")}}">
-                            <i class="fas fa-phone"></i>
+                            <i class="fas fa-phone mr-1"></i>
                             Kontak Kami
                         </a>
                     </li>
@@ -112,63 +113,8 @@
         </main>
 
         {{-- Footer --}}
-        <main>
-            <footer class="page-footer font-small unique-color-dark">
-                <div>
-                    <div class="container">
-                        <div class="row py-4 d-flex align-items-center">
-                            <div class="col-md-6 col-lg-5 text-center text-md-left mb-0 mb-md-0">
-                                <h6 class="mb-0">Terhubung dengan media sosial kami!</h6>
-                            </div>
-                            <div class="col-md-6 col-lg-7 text-center text-md-right">
-                                <a class="fb-ic"><i class="fab fa-facebook-f white-text mr-4"> </i></a>
-                                <a class="tw-ic"><i class="fab fa-twitter white-text mr-4"> </i></a>
-                                <a class="gplus-ic"><i class="fab fa-google-plus-g white-text mr-4"> </i></a>
-                                <a class="li-ic"><i class="fab fa-linkedin-in white-text mr-4"> </i></a>
-                                <a class="ins-ic"><i class="fab fa-instagram white-text"> </i></a>
-                            </div>
-                        </div>
-                        <hr class="deep-purple accent-2 mb-3 mt-0 d-inline-block mx-auto" style="width: 100%">
-                    </div>
-                </div>
-                <div class="container text-center text-md-left mt-3">
-                    <div class="row mt-3">
-                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                            <h6 class="text-uppercase font-weight-bold">{{ setting('site.title') }}</h6>
-                            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 200px;">
-                            <p>{{ setting('site.description') }}</p>
-                        </div>
-                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <h6 class="text-uppercase font-weight-bold">Grou 1</h6>
-                            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                            <br><a href="#">Link 1</a>
-                            <br><a href="#">Link 2</a>
-                            <br><a href="#">Link 3</a>
-                            <br><a href="#">Link 4</a>
-                        </div>
-                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <h6 class="text-uppercase font-weight-bold">Group 2</h6>
-                            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                            <br><a href="#">Link 4</a>
-                            <br><a href="#">Link 5</a>
-                            <br><a href="#">Link 6</a>
-                            <br><a href="#">Link 7</a>
-                        </div>
-                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                            <h6 class="text-uppercase font-weight-bold">Kontak</h6>
-                            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                            <br><i class="fas fa-home mr-3"></i>Alamat
-                            <br><i class="fas fa-envelope mr-3"></i>ppid@kabbandung.com
-                            <br><i class="fas fa-phone mr-3"></i>+ 01 234 567 88
-                            <br><i class="fas fa-print mr-3"></i>+ 01 234 567 89
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-copyright text-center py-3">© 2018 Copyright:
-                    <a href="{{ url("/")}}">{{ setting('site.title') }}</a>
-                </div>
-            </footer>
-        </main>
+        @include('layouts.footer')
+
     </div>
     {{-- <img class="" src="{{ asset('images/Bandung.png') }}" style="position:fixed; bottom:15px; right:10px; margin:0; width:4%; height: auto" href="#"> --}}
 </body>

@@ -98,16 +98,6 @@
         </div>
     </div>
 </div>
-<div class="container-fluid" style="background-color:#286DA8">
-    <div class="row justify-content-center" style="padding-bottom: 50px;">
-        <div class="col-4 text-center">
-            <a href="#" class="btn btn-light">
-                <i class="fa fa-question-circle"></i>
-                Buat Permohonan Informasi
-            </a>
-        </div>
-    </div>
-</div>
 
 @endsection
 
