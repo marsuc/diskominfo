@@ -2,17 +2,17 @@
 @section('content')
 {{-- Content Header --}}
 <div class="container-fluid" style="background-color:#286DA8">
-    <div class="jumbotron text-center" style="margin-bottom:0; margin-top:40px; background:transparent !important;">
+    <div class="jumbotron text-center mb-0 mt-4" style="background:transparent !important;">
         <img src="{{ asset('images/icons8-document-100.png') }}" class="img-fluid" alt="Responsive image" style="margin-bottom:20px;">
         <h1 class="text-light">SOP</h1>
-        <p class="text-light">SOP PPID Kab. Bandung</p>
+        <p class="text-light mb-0">SOP PPID Kab. Bandung</p>
     </div>
 </div>
 {{-- Content Body --}}
 <div class="container-fluid" style="background-color:#286DA8">
-    <div class="album py-5">
+    <div class="album py-1">
         <div class="container">
-            <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow" style="background-color:#FFFFFF">
+            <div class="d-flex align-items-center p-3 text-white-50 rounded shadow" style="background-color:#FFFFFF">
                 <img class="mr-3" src="{{ asset("images/icons8-circled-s-48.png") }}" alt="B" width="48" height="48">
                 <div class="lh-100">
                     <h2 class="mb-0 text-dark lh-100">SOP</h2>

@@ -19,11 +19,18 @@
         .dropdown:hover>.dropdown-menu {
            display: block;
         }
+        #grad1 {
+            height: 250px;
+            width: 100%;
+            background-color: #1fc8db;
+            background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+            color: white;
+            opacity: 0.95;
+        }
     </style>
 </head>
 <body>
     <div id="app">
-
         {{-- navbar --}}
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top" style="background-color:#286DA8 !important">
             <a class="navbar-brand" href="#">
@@ -57,7 +64,7 @@
                             <a class="dropdown-item" href="{{ url("/profil/dasar-hukum")}}">Dasar Hukum</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown {{ Request::is('/daftar-informasi-publik') ? 'active' : '' }}">
+                    <li class="nav-item dropdown {{ Request::is('daftar-informasi-publik') ? 'active' : '' }}">
                         <a class="nav-link dropdown-toggle font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-th-list mr-1"></i>
                             Daftar Informasi Publik
@@ -67,7 +74,7 @@
                             <a class="dropdown-item" href="#">PPID Pembantu</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown {{ Request::is('/informasi-publik') ? 'active' : '' }}">
+                    <li class="nav-item dropdown {{ Request::is('informasi-publik') ? 'active' : '' }}">
                         <a class="nav-link dropdown-toggle font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-newspaper mr-1"></i>
                             Informasi Publik
@@ -78,26 +85,26 @@
                             <a class="dropdown-item" href="#">Informasi Setiap Saat</a>
                         </div>
                     </li>
-                    <li class="nav-item {{ Request::is('/ppid-pembantu') ? 'active' : '' }}">
+                    <li class="nav-item {{ Request::is('ppid-pembantu') ? 'active' : '' }}">
                         <a class="nav-link font-weight-bold" href="{{ url("/ppid-pembantu")}}">
                             <i class="fas fa-question-circle mr-1"></i>
                             PPID Pembantu
                         </a>
                     </li>
-                    <li class="nav-item dropdown {{ Request::is('/permohonan-informasi') ? 'active' : '' }}">
+                    <li class="nav-item dropdown {{ Request::is('permohonan-informasi-publik') ? 'active' : '' }}">
                         <a class="nav-link dropdown-toggle font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-info-circle mr-1"></i>
                             Permohonan Informasi
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Permohonan Informasi Publik</a>
+                            <a class="dropdown-item" href="{{ url("/permohonan-informasi-publik")}}">Permohonan Informasi Publik</a>
                             <a class="dropdown-item" href="#">Cek Status Permohonan Informasi Publik</a>
                             <a class="dropdown-item" href="#">Permohonan  Keberatan</a>
                             <a class="dropdown-item" href="#">Cek Status Permohonan Keberatan</a>
                             <a class="dropdown-item" href="#">Laporan Permohonan Informasi Publik</a>
                         </div>
                     </li>
-                    <li class="nav-item {{ Request::is('/kontak') ? 'active' : '' }}">
+                    <li class="nav-item {{ Request::is('kontak') ? 'active' : '' }}">
                         <a class="nav-link font-weight-bold" href="{{ url("/kontak-kami")}}">
                             <i class="fas fa-phone mr-1"></i>
                             Kontak Kami

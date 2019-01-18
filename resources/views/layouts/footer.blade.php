@@ -1,9 +1,9 @@
 <main>
     <div class="container-fluid" style="background-color:#286DA8">
-        <div class="row justify-content-center" style="padding-bottom: 50px;">
-            <div class="col-4 text-center">
+        <div class="row justify-content-center">
+            <div class="col-4 text-center my-5">
                 <h5 class="text-light"> Tidak menemukan informasi yang anda inginkan? </h6>
-                <a href="#" class="btn btn-light">
+                <a href="{{ url("/permohonan-informasi-publik")}}" class="btn btn-light">
                     <i class="fa fa-question-circle"></i>
                     Buat Permohonan Informasi
                 </a>
