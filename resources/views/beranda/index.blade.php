@@ -12,12 +12,14 @@
 <div class="container-fluid" style="background-color:#286DA8">
     <div class="album py-5">
         <div class="container">
-            <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow" style="background-color:#FFFFFF">
-                <img class="mr-3" src="{{ asset("images/icons8-circled-g-48.png") }}" alt="B" width="48" height="48">
-                <div class="lh-100">
-                    <h2 class="mb-0 text-dark lh-100">Galeri</h2>
+            <a class="text-dark" href="{{ url("/profil/galeri") }}">
+                <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow" style="background-color:#FFFFFF">
+                    <img class="mr-3" src="{{ asset("images/icons8-circled-g-48.png") }}" alt="B" width="48" height="48">
+                    <div class="lh-100">
+                        <h2 class="mb-0 text-dark lh-100">Galeri</h2>
+                    </div>
                 </div>
-            </div>
+            </a>
             <div id="carouselExampleIndicators" class="carousel slide rounded shadow" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
