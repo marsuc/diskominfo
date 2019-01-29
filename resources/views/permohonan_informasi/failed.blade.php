@@ -3,9 +3,9 @@
 {{-- Content Header --}}
 <div class="container-fluid" style="background-color:#286DA8">
     <div class="jumbotron text-center mb-0 mt-4" style="background:transparent !important;">
-        <img src="{{ asset('images/icons8-automation-100.png') }}" class="img-fluid" alt="Responsive image" style="margin-bottom:20px;">
-        <h1 class="text-light">Mekanisme Pelayanan Informasi Publik</h1>
-        <p class="text-light mb-0">Mekanisme Pelayanan Informasi Publik PPID Kab. Bandung</p>
+        <img src="{{ asset('images/icons8-ask-question-100.png') }}" class="img-fluid" alt="Responsive image" style="margin-bottom:20px;">
+        <h1 class="text-light">Permohonan Informasi Publik</h1>
+        <p class="text-light mb-0">Permohonan Informasi Publik PPID Kab. Bandung</p>
     </div>
 </div>
 {{-- Content Body --}}
@@ -13,14 +13,17 @@
     <div class="album py-1">
         <div class="container">
             <div class="d-flex align-items-center p-3 text-white-50 rounded shadow" style="background-color:#FFFFFF">
-                <img class="mr-3" src="{{ asset("images/icons8-circled-m-48.png") }}" alt="B" width="48" height="48">
+                <img class="mr-3" src="{{ asset("images/icons8-circled-p-48.png") }}" alt="B" width="48" height="48">
                 <div class="lh-100">
-                    <h2 class="mb-0 text-dark lh-100">{!! $mpinfo->title !!}</h2>
+                    <h2 class="mb-0 text-dark lh-100">Permohonan Informasi Publik</h2>
                 </div>
             </div>
             <div class="align-items-center p-3 my-3 rounded shadow" style="background-color:#FFFFFF">
-                {!! $mpinfo->body !!}
+                <div class="alert alert-success" role="alert">
+                    Permohonan Informasi Gagal Disimpan
+                </div>
             </div>
         </div>
     </div>
 </div>
+@endsection

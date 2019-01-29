@@ -59,7 +59,7 @@
                     <table class="table table-sm table-borderless mt-0 pt-0">
                         <tr>
                             <td><i class="fas fa-home"></i></td>
-                            <td>Jl. Raya Soreang No.17, Pamekaran, Soreang, Bandung, Jawa Barat 40912</td>
+                            <td>Jl. Raya Soreang KM. 17, Soreang 40991</td>
                         </tr>
                         <tr>
                             <td><i class="fas fa-envelope"></i></td>
@@ -67,17 +67,9 @@
                         </tr>
                         <tr>
                             <td><i class="fas fa-phone"></i></td>
-                            <td>+ 01 234 567 88</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fas fa-print"></i></td>
-                            <td>+ 01 234 567 89</td>
+                            <td>(022) 5891582</td>
                         </tr>
                     </table>
-                    {{-- <br><i class="fas fa-home mr-3"></i>Jl. Raya Soreang No.17, Pamekaran, Soreang, Bandung, Jawa Barat 40912
-                    <br><i class="fas fa-envelope mr-3"></i>ppid@kabbandung.com
-                    <br><i class="fas fa-phone mr-3"></i>+ 01 234 567 88
-                    <br><i class="fas fa-print mr-3"></i>+ 01 234 567 89 --}}
                 </div>
             </div>
         </div>

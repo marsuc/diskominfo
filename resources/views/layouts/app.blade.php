@@ -70,8 +70,8 @@
                             Daftar Informasi Publik
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">PPID Utama</a>
-                            <a class="dropdown-item" href="#">PPID Pembantu</a>
+                            <a class="dropdown-item" href="{{ url("/ppid/utama") }}">PPID Utama</a>
+                            <a class="dropdown-item" href="{{ url("/ppid/pembantu") }}">PPID Pembantu</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown {{ Request::is('informasi-publik') ? 'active' : '' }}">
@@ -80,13 +80,13 @@
                             Informasi Publik
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Informasi Berkala</a>
-                            <a class="dropdown-item" href="#">Informasi Serta Merta</a>
-                            <a class="dropdown-item" href="#">Informasi Setiap Saat</a>
+                            <a class="dropdown-item" href="{{ url("/informasi/berkala") }}">Informasi Berkala</a>
+                            <a class="dropdown-item" href="{{ url("/informasi/serta-merta") }}">Informasi Serta Merta</a>
+                            <a class="dropdown-item" href="{{ url("/informasi/setiap-saat") }}">Informasi Setiap Saat</a>
                         </div>
                     </li>
                     <li class="nav-item {{ Request::is('ppid-pembantu') ? 'active' : '' }}">
-                        <a class="nav-link font-weight-bold" href="{{ url("/ppid-pembantu")}}">
+                        <a class="nav-link font-weight-bold" href="{{ url("/ppid/pembantu")}}">
                             <i class="fas fa-question-circle mr-1"></i>
                             PPID Pembantu
                         </a>
@@ -101,7 +101,7 @@
                             <a class="dropdown-item" href="#">Cek Status Permohonan Informasi Publik</a>
                             <a class="dropdown-item" href="#">Permohonan  Keberatan</a>
                             <a class="dropdown-item" href="#">Cek Status Permohonan Keberatan</a>
-                            <a class="dropdown-item" href="#">Laporan Permohonan Informasi Publik</a>
+                            <a class="dropdown-item" href="{{ url("/permohonan-informasi-publik/laporan-tahun")}}">Laporan Permohonan Informasi Publik</a>
                         </div>
                     </li>
                     <li class="nav-item {{ Request::is('kontak') ? 'active' : '' }}">

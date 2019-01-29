@@ -19,31 +19,22 @@
                 </div>
             </div>
             <div class="align-items-center p-3 my-3 rounded shadow" style="background-color:#FFFFFF">
-                <form>
-                    {{-- <div class="form-group">
-                        <label for="namaDepan">Nama Depan</label>
-                        <input type="text" class="form-control" id="namaDepan" aria-describedby="namaDepanHelp" placeholder="Masukkan Nama Depan Anda">
-                        <small id="namaDepanHelp" class="form-text text-muted">Nama Depan</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="namaBelakang">Nama Belakang</label>
-                        <input type="text" class="form-control" id="namaBelakang" aria-describedby="namaDepanHelp" placeholder="Masukkan Nama Belakang">
-                        <small id="namaBelakangHelp" class="form-text text-muted">Nama Belakang</small>
-                    </div> --}}
+                <form enctype="multipart/form-data" method="POST" action="{{ url('permohonan-informasi-publik') }}">
                     <div class="form-row mb-3 mx-2">
+                        @csrf
                         <div class="col">
                             <label>Nama</label>
-                            <input type="text" class="form-control" placeholder="Nama depan">
+                            <input type="text" name="first_name" class="form-control" placeholder="Nama depan">
                         </div>
                         <div class="col">
                             <label>&nbsp</label>
-                            <input type="text" class="form-control" placeholder="Nama belakang">
+                            <input type="text" name="last_name" class="form-control" placeholder="Nama belakang">
                         </div>
                     </div>
                     <div class="form-row mb-3 mx-2">
                         <div class="col">
                             <label>Status</label>
-                            <select class="form-control">
+                            <select class="form-control" name="status">
                                 <option>Perorangan</option>
                                 <option>Kelompok Berbadan Hukum</option>
                                 <option>Kelompok Tidak Berbadan Hukum</option>
@@ -51,52 +42,52 @@
                         </div>
                         <div class="col">
                             <label>No. KTP / No. SK</label>
-                            <input type="text" class="form-control" placeholder="No. KTP / No. SK">
+                            <input type="text" name="id_number" class="form-control" placeholder="No. KTP / No. SK">
                         </div>
                     </div>
                     <div class="form-group mb-3">
                         <div class="col">
-                            <label for="alamat">Alamat</label>
-                            <textarea class="form-control" id="alamat" rows="3"></textarea>
+                            <label for="address">Alamat</label>
+                            <textarea name="address" class="form-control" id="address" rows="3"></textarea>
                         </div>
                     </div>
                     <div class="form-row mb-3 mx-2">
                         <div class="col">
                             <label>Pekerjaan</label>
-                            <input type="text" class="form-control" placeholder="Pekerjaan">
+                            <input type="text" name="job" class="form-control" placeholder="Pekerjaan">
                         </div>
                         <div class="col">
                             <label>Upload Gambar KTP / SK</label>
-                            <input type="file" class="form-control-file" id="ktp">
-                            <small class="form-text text-muted">max size 2mb</small>
+                            <input type="file" name="id_picture" class="form-control-file" id="id_picture">
+                            <small class="form-text text-muted">ukuran maksimum 2mb</small>
                         </div>
                     </div>
                     <div class="form-row mb-3 mx-2">
                         <div class="col">
                             <label>E-mail</label>
-                            <input type="text" class="form-control" placeholder="E-mail">
+                            <input type="text" name="email" class="form-control" placeholder="E-mail">
                         </div>
                         <div class="col">
                             <label>No. Telepon</label>
-                            <input type="text" class="form-control" placeholder="No. Telepon">
+                            <input type="text" name="phone_number" class="form-control" placeholder="No. Telepon">
                         </div>
                     </div>
                     <div class="form-group mb-3">
                         <div class="col">
                             <label for="alamat">Rincian Informasi yang dibutuhkan</label>
-                            <textarea class="form-control" id="rincianInformasi" rows="3"></textarea>
+                            <textarea name="info_desc" class="form-control" id="rincianInformasi" rows="3"></textarea>
                         </div>
                     </div>
                     <div class="form-group mb-3">
                         <div class="col">
                             <label for="alamat">Tujuan penggunaan informasi</label>
-                            <textarea class="form-control" id="tujuanPenggunaan" rows="3"></textarea>
+                            <textarea name="infor_purposes" class="form-control" id="tujuanPenggunaan" rows="3"></textarea>
                         </div>
                     </div>
                     <div class="form-row mb-3 mx-2">
                         <div class="col">
                             <label>Cara Memperoleh Informasi</label>
-                            <select class="form-control">
+                            <select name="get_method" class="form-control">
                                 <option value="melihat">Melihat</option>
                                 <option value="membaca">Membaca</option>
                                 <option value="mendengarkan">Mendengarkan</option>
@@ -106,7 +97,7 @@
                         </div>
                         <div class="col">
                             <label>Cara Mendapatkan Salinan Informasi</label>
-                            <select class="form-control">
+                            <select name="get_method_2" class="form-control">
                                 <option value="mengambil_langsung">Mengambil Langsung</option>
                                 <option value="kurir">Kurir</option>
                                 <option value="faksimili">Faksimili</option>

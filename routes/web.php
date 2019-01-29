@@ -26,15 +26,19 @@ Route::get('/', 'SiteController@home')->name('home');
 Route::get('/informasi-publik', 'SiteController@informasiPublik')->name('informasi-publik');
 Route::get('/ppid-pembantu', 'SiteController@ppidPembantu')->name('ppid-pembantu');
 Route::get('/permohonan-informasi', 'SiteController@permohonanInformasi')->name('permohonan-informasi');
-Route::get('/kontak-kami', 'SiteController@kontakKami')->name('kontak-kami');
+Route::get('/kontak-kami', 'SiteController@kontak')->name('kontak-kami');
 // Route::post('/permohonan-informasi', 'SiteController@insertPermohonanInformasi');
 
 Route::group(['prefix' => 'berita'], function () {
     Route::get('/', 'Berita\BeritaController@index')->name('berita');
+    Route::get('/{slug}', 'Berita\BeritaController@show')->name('berita-show');
 });
 
 Route::group(['prefix' => 'permohonan-informasi-publik'], function () {
     Route::get('/', 'PermohonanInformasi\PermohonanInformasiController@index')->name('permohonan-informasi');
+    Route::post('/', 'PermohonanInformasi\PermohonanInformasiController@insert')->name('insert-permohonan-informasi');
+    Route::get('/laporan-tahun', 'PermohonanInformasi\PermohonanInformasiController@laporanTahun')->name('laporan-tahun');
+    Route::get('/laporan-bulan/{year}', 'PermohonanInformasi\PermohonanInformasiController@laporanBulan')->name('laporan-bulan');
 });
 
 Route::group(['prefix' => 'profil'], function () {
@@ -47,4 +51,15 @@ Route::group(['prefix' => 'profil'], function () {
     Route::get('/standar-pelayanan',    'Profil\ProfilController@indexStandarPelayananInformasi')->name('standar-pelayanan');
     Route::get('/galeri',               'Profil\ProfilController@indexGaleri')->name('galeri');
     Route::get('/dasar-hukum',          'Profil\ProfilController@indexDasarHukum')->name('dasar-hukum');
+});
+
+Route::group(['prefix' => 'ppid'], function() {
+    Route::get('/utama', 'Ppid\PpidController@utama')->name('ppid-utama');
+    Route::get('/pembantu', 'Ppid\PpidController@pembantu')->name('ppid-pembantu');
+});
+
+Route::group(['prefix' => 'informasi'], function() {
+    Route::get('/berkala', 'InformasiPublik\InformasiPublikController@berkala')->name('informasi-berkala');
+    Route::get('/serta-merta', 'InformasiPublik\InformasiPublikController@sertaMerta')->name('serta-merta');
+    Route::get('/setiap-saat', 'InformasiPublik\InformasiPublikController@setiapSaat')->name('setiap-saat');
 });

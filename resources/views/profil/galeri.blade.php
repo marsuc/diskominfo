@@ -68,14 +68,14 @@
                 <section class="gallery-block grid-gallery">
                     <div class="container">
                         <div class="row">
-                            {{-- @for($i = 1; $i <= 9; $i++) --}}
+                            @foreach($images as $image)
                             <div class="col-md-6 col-lg-4 item">
-                                <a class="lightbox" href="{{ asset("images/image1.jpg") }}">
-                                    <img class="img-fluid image scale-on-hover" src="{{ asset("images/image1.jpg") }}">
+                                <a class="lightbox" href="{{ asset('storage/'.$image->image) }}">
+                                    <img class="img-fluid image scale-on-hover" style="object-fit: cover; width: 350px; height: 200px;" src="{{ asset('storage/'.$image->image) }}">
                                 </a>
                             </div>
-                            {{-- @endfor --}}
-                            <div class="col-md-6 col-lg-4 item">
+                            @endforeach
+                            {{-- <div class="col-md-6 col-lg-4 item">
                                 <a class="lightbox" href="{{ asset("images/image2.jpg") }}") }}">
                                     <img class="img-fluid image scale-on-hover" src="{{ asset("images/image2.jpg") }}">
                                 </a>
@@ -114,7 +114,7 @@
                                 <a class="lightbox" href="{{ asset("images/image9.jpg") }}">
                                     <img class="img-fluid image scale-on-hover" src="{{ asset("images/image9.jpg") }}">
                                 </a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </section>
